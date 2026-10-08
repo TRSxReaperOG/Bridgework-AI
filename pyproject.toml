@@ -1,0 +1,32 @@
+[project]
+name = "bridgework-ai"
+version = "0.1.0"
+description = "Agent orchestration system that researches a feature idea, compares it to a target codebase, and produces a gap report and implementation plan."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { file = "LICENSE" }
+dependencies = [
+    "pydantic>=2.0",
+    "python-dotenv>=1.0",
+    "google-genai>=1.0",
+    "tavily-python>=0.5",
+    "chromadb>=1.0",
+    "typer>=0.12",
+    "rich>=13.0",
+    "matplotlib>=3.8",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["bridgework*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--import-mode=importlib"

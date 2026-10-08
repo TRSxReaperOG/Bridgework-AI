@@ -1,0 +1,9 @@
+services:
+  app:
+    build: .
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      # Mount the project so code edits, the Chroma index, SQLite db and traces persist on the host.
+      - .:/app

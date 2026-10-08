@@ -1,1 +1,23 @@
 Phases.md
+
+# Secrets
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+
+# Runtime data (Chroma index, SQLite db)
+data/*
+!data/.gitkeep
+
+# Everyday traces are local; curated examples live in traces/phase*/
+traces/*
+!traces/.gitkeep
+!traces/phase*/
+
+# OS
+.DS_Store
